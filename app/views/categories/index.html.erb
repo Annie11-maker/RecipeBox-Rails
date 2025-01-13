@@ -1,0 +1,19 @@
+<div class="cover mb-4 d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1>Save all your favourite recipes</h1>
+  </div>
+</div>
+<!-- Create New category Button -->
+<div class="container py-5 text-end">
+  <%= link_to "Create a new category", new_category_path , class: "btn-flat" %>
+</div>
+
+<h1>My categories</h1>
+<!-- Categories Section -->
+<div class="row">
+  <% @categories.each do |category| %>
+    <div class="cards">
+      <h2><%= link_to category.name, category_path(category), class: "category-link" %></h2>
+    </div>
+  <% end %>
+</div>

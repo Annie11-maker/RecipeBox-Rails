@@ -49,6 +49,15 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
+gem "simple_form"
+gem 'sassc-rails', '~> 2.1'
+gem "bootstrap", "~> 5.2"
+gem "font-awesome-sass", "~> 6.1"
+gem "autoprefixer-rails"
+group :development do
+    # [...]
+    gem "hotwire-livereload"
+end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -59,4 +68,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
