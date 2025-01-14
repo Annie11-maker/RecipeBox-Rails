@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-cookbook">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <%= image_tag "logo.png" %>
@@ -20,22 +20,27 @@
   </div>
 </div>
 
-<div class="cover mb-4 d-flex align-items-center justify-content-center">
-  <div class="text-center text-white">
-    <h1>Save all your favourite recipes</h1>
+<div class="banner" style="background-image: url(<%= image_path "banner.jpg"%>)">
+  <div class="container">
+    <h1>Cookbook</h1>
+    <p>Save all your favourite recipes</p>
   </div>
 </div>
-<!-- Create New category Button -->
-<div class="container py-5 text-end">
-  <%= link_to "Create a new category", new_category_path , class: "btn-flat" %>
-</div>
 
-<h1>My categories</h1>
-<!-- Categories Section -->
-<div class="row card-category">
-  <% @categories.each do |category| %>
-   <div class="co-12 col-sm-6 col-md-4 mb-3">
-     <%= link_to category.name, category_path(category), class: "text-decoration-none" %>
-   </div>
-  <% end %>
+<div class="container">
+
+  <div class="info-top">
+    <h1>My categories</h1>
+    <div class="text-end">
+      <%= link_to "Create a new category", new_category_path , class: "btn-flat" %>
+    </div>
+  </div>
+
+  <div class="cards row">
+    <% @categories.each do |category| %>
+    <div class="card-category co-12 col-sm-6 col-md-4 mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "food.jpg"%>);">
+      <%= link_to category.name, category_path(category), class: "text-decoration-none" %>
+    </div>
+    <% end %>
+  </div>
 </div>

@@ -1,5 +1,8 @@
 <h1><%= @category.name %></h1>
-<%= cl_image_tag @category.photo.key, height: 300, width: 400, crop: :fill %>
+<div>
+  <%= cl_image_tag @category.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
+
 <!-- Categories Section -->
 <div class="categories">
   <% @category.bookmarks.each do |bookmark| %>
