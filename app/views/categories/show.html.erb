@@ -1,18 +1,20 @@
 <h1><%= @category.name %></h1>
-
+<%= cl_image_tag @category.photo.key, height: 300, width: 400, crop: :fill %>
 <!-- Categories Section -->
 <div class="categories">
   <% @category.bookmarks.each do |bookmark| %>
     <div class="cards">
       <h2><%= bookmark.recipe.name %></h2>
 
-    <%= link_to "Delete", bookmark_path(bookmark),
+    <%= link_to "Delete recipe", bookmark_path(bookmark),
           data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-flat"%>
     </div>
     <br>
   <% end %>
 </div>
 <br>
-  <%= link_to "Add a new recipe to Bookmark", new_category_bookmark_path(@category), class: "btn-flat" %>
-  <br>
-  <%= link_to "Return to categories index", categories_path, class: "btn-flat" %>
+<%= link_to "Add a new recipe to Bookmark", new_category_bookmark_path(@category), class: "btn-flat" %>
+<br><br>
+<%= link_to "Return to categories index", categories_path, class: "btn-flat" %>
+<%= link_to "Delete Category", category_path(@category),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-flat"%>

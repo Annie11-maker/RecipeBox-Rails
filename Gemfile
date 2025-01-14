@@ -55,6 +55,7 @@ gem "bootstrap", "~> 5.2"
 gem "font-awesome-sass", "~> 6.1"
 gem "autoprefixer-rails"
 gem "dotenv-rails"
+gem "cloudinary"
 group :development do
     # [...]
     gem "hotwire-livereload"

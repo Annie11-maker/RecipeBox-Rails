@@ -1,2 +1,5 @@
-<h1>Categories#destroy</h1>
-<p>Find me in app/views/categories/destroy.html.erb</p>
+<h1>Delete Category</h1>
+<%= link_to "Delete",
+  category_path(@category),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
