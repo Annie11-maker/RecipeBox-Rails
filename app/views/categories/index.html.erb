@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">My Categories</a>
+            <%= link_to "Home", categories_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Create a new category</a>
+            <%= link_to "Create a new category", new_category_path , class: "nav-link" %>
           </li>
       </ul>
     </div>
@@ -23,7 +23,7 @@
 <div class="banner" style="background-image: url(<%= image_path "banner.jpg"%>)">
   <div class="container">
     <h1>Cookbook</h1>
-    <p>Save all your favourite recipes</p>
+    <h2>Save all your favourite recipes</h2>
   </div>
 </div>
 
@@ -36,11 +36,13 @@
     </div>
   </div>
 
-  <div class="cards row">
+  <div class="cards">
     <% @categories.each do |category| %>
-    <div class="card-category co-12 col-sm-6 col-md-4 mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "food.jpg"%>);">
-      <%= link_to category.name, category_path(category), class: "text-decoration-none" %>
-    </div>
+      <%= link_to category_path(category) do%>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "food.jpg"%>);">
+          <%= category.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -1,6 +1,9 @@
-<h1>Add a recipe to bookmark</h1>
-<%= simple_form_for [@category, @bookmark] do |f| %>
+<div>
+  <h1>Add a recipe</h1>
+  <%= simple_form_for [@category, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :recipe %>
   <%= f.submit class:"btn btn-primary"%>
-<% end %>
+  <% end %>
+
+</div>
