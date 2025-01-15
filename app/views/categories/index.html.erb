@@ -27,15 +27,11 @@
   </div>
 </div>
 
-<div class="container">
-
-  <div class="info-top">
-    <h1>My categories</h1>
-    <div class="text-end">
-      <%= link_to "Create a new category", new_category_path , class: "btn btn-warning" %>
-    </div>
+<div class="container py-5">
+  <div class="info-top flex d-flex justify-content-between align-items-center">
+    <h3>List of Categories</h3>
+    <%= link_to "New Category", new_category_path , class: "btn btn-warning" %>
   </div>
-
 
   <div class="cards">
     <% @categories.each do |category| %>
