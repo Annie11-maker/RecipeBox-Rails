@@ -32,9 +32,10 @@
   <div class="info-top">
     <h1>My categories</h1>
     <div class="text-end">
-      <%= link_to "Create a new category", new_category_path , class: "btn-flat" %>
+      <%= link_to "Create a new category", new_category_path , class: "btn btn-warning" %>
     </div>
   </div>
+
 
   <div class="cards">
     <% @categories.each do |category| %>
