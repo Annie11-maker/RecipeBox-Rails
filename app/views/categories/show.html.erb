@@ -20,11 +20,16 @@
   </div>
 </div>
 
-<div class="banner">
-  <%= cl_image_tag @category.photo.key, height: 300, width: 400, crop: :fill%>
+<div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path(@category.photo.key) %>'); height: 300px;">
   <div class="container">
     <h1><%= @category.name %></h1>
   </div>
+</div>
+
+  <div class="container">
+    <h1><%= @category.name %></h1>
+  </div>
+</div>
 
 <div class="container">
   <div class="info-top">
@@ -57,5 +62,6 @@
 
   </div>
 </div>
+
 <%= link_to "Delete Category", category_path(@category),
           data: { turbo_method: :delete, turbo_confirm: "Are you sure?", class: "btn-flat" }%>
