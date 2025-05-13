@@ -36,8 +36,12 @@
     <% @category.bookmarks.each do |bookmark| %>
     <div class="card-recipe" >
 
-      <%= link_to "Delete recipe", bookmark_path(bookmark),
-          data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn-flat text-end"%>
+      <%= link_to bookmark_path(bookmark),
+            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+            class: "btn-flat text-end" do %>
+      <i class="fas fa-trash-alt"></i>
+      <% end %>
+
 
       <img src="<%= bookmark.recipe.image_url%>">
       <div class="card-recipe-description">
