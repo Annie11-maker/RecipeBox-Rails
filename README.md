@@ -1,6 +1,6 @@
 # Recipe Box
 
-Recipe Box is a web application built with Ruby on Rails for managing and displaying recipes. The app features an interactive home page displaying categories like Breakfast, Pasta, Dessert, and Seafood. Users can create new categories and recipes, view recipe details, and add comments.
+Recipe Box is a web application built with Ruby on Rails for managing and displaying recipes.
 
 ## Technologies Used
 
