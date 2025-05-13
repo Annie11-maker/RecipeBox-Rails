@@ -51,7 +51,13 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
 }
+.card-category a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .card-recipe {
   overflow: hidden;
   background: white;
@@ -68,6 +74,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-recipe p {
