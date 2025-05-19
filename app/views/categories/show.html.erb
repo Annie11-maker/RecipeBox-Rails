@@ -36,24 +36,23 @@
     <% @category.bookmarks.each do |bookmark| %>
     <div class="card-recipe" >
 
-      <%= link_to bookmark_path(bookmark),
-            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-            class: "btn-flat text-end" do %>
-      <i class="fas fa-trash-alt"></i>
-      <% end %>
-
-
       <img src="<%= bookmark.recipe.image_url%>">
       <div class="card-recipe-description">
         <h2><%= bookmark.recipe.name %></h2>
         <p><%= bookmark.recipe.description.truncate(200) %></p>
       </div>
-      <div class="card-recipe-info">
+      <div class="card-recipe-info p-2">
         <%= bookmark.comment %>
       </div>
-      <div>
+      <div class="cards d-flex justify-content-between align-items-center p-2">
         <%= bookmark.recipe.rating %> <%= '⭐'* bookmark.recipe.rating %>
-      </div>
+
+        <%= link_to bookmark_path(bookmark),
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "btn btn-warning" do %>
+        <i class="fas fa-trash-alt"></i>
+        <% end %>
+    </div>
     </div>
   <% end %>
 
